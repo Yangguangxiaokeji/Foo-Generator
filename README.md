@@ -10,7 +10,7 @@
 
 - 请求示例
 
-  ![](png\ddl请求示例.jpg)
+  [![](png\ddl请求示例.jpg)](https://img1.imgtp.com/2023/07/26/YMkAcmq3.jpg)
 
   需要说明：
 
@@ -22,7 +22,7 @@
 
 - 请求示例
 
-  ![](png\批量生成示例.jpg)
+ [ ![](png\批量生成示例.jpg)](https://img1.imgtp.com/2023/07/26/T6YheZRy.jpg)
 
 - json格式
 
