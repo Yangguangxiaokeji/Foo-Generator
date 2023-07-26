@@ -10,7 +10,7 @@
 
 - 请求示例
 
-  ![](..\Foo-Generator\png\ddl请求示例.jpg)
+  ![](png\ddl请求示例.jpg)
 
   需要说明：
 
@@ -22,7 +22,7 @@
 
 - 请求示例
 
-  ![](..\Foo-Generator\png\批量生成示例.jpg)
+  ![](png\批量生成示例.jpg)
 
 - json格式
 
