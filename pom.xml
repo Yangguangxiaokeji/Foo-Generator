@@ -18,6 +18,7 @@
     <modules>
         <module>generator-mybatisplus</module>
         <module>generator-mybatis</module>
+        <module>common</module>
     </modules>
 
     <name>Foo-Generator</name>
