@@ -87,7 +87,7 @@ public class ${ClassName}Controller {
      * @return 删除是否成功
      */
     @PostMapping("/delete/{id}")
-    public BaseResult<String> deleteById(@PathVariable("id") Long id) {
+    public BaseResult<String> deleteById(@PathVariable("id") $pkColumn.javaType id) {
         ${className}Service.deleteById(id);
         return BaseResult.success("delete successfully");
     }
@@ -100,7 +100,7 @@ public class ${ClassName}Controller {
      */
     @PostMapping("/deleteBatch")
     public BaseResult<String> deleteBatch(@RequestBody ${ClassName}DTO ${className}DTO) {
-        List<Long> ids = ${className}DTO.getIds();
+        List<$pkColumn.javaType> ids = ${className}DTO.getIds();
         if (CollectionUtils.isEmpty(ids)) {
             return BaseResult.failed("must choose one least data");
         }
