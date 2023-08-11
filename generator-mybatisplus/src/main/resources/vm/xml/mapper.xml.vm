@@ -41,7 +41,7 @@
 
     </select>
 
-    <!--查查询指定数据集合,查询条件为Like-->
+    <!--查询指定数据集合,查询条件为Like-->
     <select id="listByLikeCondition" resultMap="BaseResultMap">
         select
             <include refid="Base_Column_List"/>
@@ -76,16 +76,14 @@
         insert into ${tableName}
         <trim prefix="(" suffix=")" suffixOverrides=",">
         #foreach($column in $columns)
-            <if test="$column.javaField != null#if($column.javaType ==
-                'String') and $column.javaField != ''#end">
+            <if test="$column.javaField != null ">
                 $column.columnName#if($foreach.count != $columns.size()),#end
             </if>
         #end
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
         #foreach($column in $columns)
-            <if test="$column.javaField != null#if($column.javaType ==
-                'String') and $column.javaField != ''#end">
+            <if test="$column.javaField != null ">
                 #{$column.javaField,jdbcType=$column.jdbcType}#if($foreach.count != $columns.size()),#end
             </if>
         #end
@@ -110,13 +108,13 @@
         </foreach>
     </insert>
 
-    <!--通过主键修改数据,未传数据字段不更新-->
+    <!--通过主键修改数据,字段为null不更新-->
     <update id="updateByPrimaryKeySelective" parameterType="${packageName}.${moduleName}.domain.${ClassName}PO">
         update ${tableName}
         <trim prefix="SET" suffixOverrides=",">
         #foreach($column in $columns)
             #if($column.columnName != $pkColumn.columnName)
-            <if test="$column.javaField != null#if($column.javaType =='String') and $column.javaField != ''#end">
+            <if test="$column.javaField != null ">
                 $column.columnName = #{$column.javaField,jdbcType=$column.jdbcType}#if($foreach.count != $columns.size()),#end
             </if>
              #end
