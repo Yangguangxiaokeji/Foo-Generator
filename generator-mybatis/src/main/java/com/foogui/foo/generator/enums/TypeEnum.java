@@ -13,8 +13,8 @@ public enum TypeEnum {
 
     VARCHAR("varchar","String","VARCHAR"),
     DATE("date","Date","DATE"),
-    DATETIME("datetime","Date","DATE"),
-    TIMESTAMP("timestamp","Date","DATE"),
+    DATETIME("datetime","Date","TIMESTAMP"),
+    TIMESTAMP("timestamp","Date","TIMESTAMP"),
     TINYINT("tinyint","Integer","TINYINT"),
     TINYINT_UNSIGNED("tinyint unsigned","Integer","TINYINT"),
     INT("int","Integer","INTEGER"),
