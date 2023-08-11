@@ -10,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 #foreach ($column in $columns)
 #if($column.javaType =="Date")
 import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
 #end
 #end
 import java.io.Serializable;

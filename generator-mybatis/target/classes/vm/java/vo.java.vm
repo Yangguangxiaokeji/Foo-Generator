@@ -31,7 +31,7 @@ public class ${ClassName}VO {
 
 #foreach ($column in $columns)
     #if($column.javaType == "Date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     #end
     private $column.javaType $column.javaField;
 

@@ -38,6 +38,9 @@ public class ${ClassName}PO implements Serializable {
     /**
      * $column.columnComment
      */
+    #if($column.javaType == "Date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    #end
     private $column.javaType $column.javaField;
     #end
 
