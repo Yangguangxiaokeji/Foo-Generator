@@ -17,7 +17,8 @@
     </sql>
 
     <!--查询单个-->
-    <select id="selectByPrimaryKey" parameterType="${pkColumn.javaType}" resultMap="BaseResultMap">
+    <select id="selectByPrimaryKey" parameterType="${pkColumn.javaType}"
+            resultType="${packageName}.${moduleName}.vo.${ClassName}VO">
         select
         <include refid="Base_Column_List"/>
         from ${tableName}
@@ -25,7 +26,8 @@
     </select>
 
     <!--查询指定数据集合,查询条件为EQ-->
-    <select id="listByEqualCondition" resultMap="BaseResultMap">
+    <select id="listByEqualCondition"
+            resultType="${packageName}.${moduleName}.vo.${ClassName}VO">
         select
         <include refid="Base_Column_List"/>
         from ${tableName}
