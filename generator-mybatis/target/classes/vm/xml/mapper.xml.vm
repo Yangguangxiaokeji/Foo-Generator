@@ -17,8 +17,7 @@
     </sql>
 
     <!--查询单个-->
-    <select id="selectByPrimaryKey" parameterType="${pkColumn.javaType}"
-            resultType="${packageName}.${moduleName}.vo.${ClassName}VO">
+    <select id="selectByPrimaryKey" parameterType="${pkColumn.javaType}" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from ${tableName}
@@ -42,8 +41,9 @@
 
     </select>
 
-    <!--查查询指定数据集合,查询条件为Like-->
-    <select id="listByLikeCondition" resultMap="BaseResultMap">
+    <!--查询指定数据集合,查询条件为Like-->
+    <select id="listByLikeCondition"
+            resultType="${packageName}.${moduleName}.vo.${ClassName}VO">
         select
             <include refid="Base_Column_List"/>
         from ${tableName}

@@ -1,6 +1,6 @@
-package com.foogui.foo.generator.domain;
+package com.foogui.common.domain;
 
-import com.foogui.foo.generator.util.ValidGroup;
+import com.foogui.common.validation.ValidGroup;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;

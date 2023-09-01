@@ -1,4 +1,4 @@
-package com.foogui.foo.generator.domain;
+package com.foogui.common.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

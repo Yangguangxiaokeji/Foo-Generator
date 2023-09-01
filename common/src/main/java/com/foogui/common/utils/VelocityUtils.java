@@ -1,7 +1,8 @@
-package com.foogui.foo.generator.util;
+package com.foogui.common.utils;
 
-import com.foogui.foo.generator.domain.DataBase;
-import com.foogui.foo.generator.domain.Table;
+import com.foogui.common.constant.CommonConstant;
+import com.foogui.common.domain.DataBase;
+import com.foogui.common.domain.Table;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;

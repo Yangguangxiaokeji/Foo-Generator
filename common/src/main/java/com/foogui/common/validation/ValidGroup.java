@@ -1,4 +1,4 @@
-package com.foogui.foo.generator.util;
+package com.foogui.common.validation;
 
 public interface ValidGroup {
     interface Json {

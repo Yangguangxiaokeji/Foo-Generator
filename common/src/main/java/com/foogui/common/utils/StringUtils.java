@@ -1,4 +1,4 @@
-package com.foogui.foo.generator.util;
+package com.foogui.common.utils;
 
 import java.util.UUID;
 

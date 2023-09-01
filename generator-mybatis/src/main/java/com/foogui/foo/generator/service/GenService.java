@@ -1,6 +1,6 @@
 package com.foogui.foo.generator.service;
 
-import com.foogui.foo.generator.domain.GenDTO;
+import com.foogui.common.domain.GenDTO;
 
 public interface GenService {
 

@@ -1,5 +1,7 @@
-package com.foogui.foo.generator.domain;
+package com.foogui.common.domain;
 
+import com.foogui.common.domain.Column;
+import com.foogui.common.domain.DataBase;
 import lombok.Data;
 
 import java.util.List;

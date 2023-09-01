@@ -3,6 +3,6 @@ package com.foogui.common.domain;
 import lombok.Data;
 
 @Data
-public class DTO {
+public class CommonDTO {
     private String value;
 }

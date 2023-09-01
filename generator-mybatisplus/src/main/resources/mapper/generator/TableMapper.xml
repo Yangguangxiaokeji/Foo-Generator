@@ -5,7 +5,7 @@
 <mapper namespace="com.foogui.foo.generator.mapper.TableMapper">
 
 
-    <select id="selectRawTableInfo" resultType="com.foogui.foo.generator.domain.Table">
+    <select id="selectRawTableInfo" resultType="com.foogui.common.domain.Table">
         select *
         from information_schema.tables
         where table_comment <![CDATA[ <> ]]> ''

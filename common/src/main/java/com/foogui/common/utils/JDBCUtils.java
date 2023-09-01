@@ -1,6 +1,6 @@
-package com.foogui.foo.generator.util;
+package com.foogui.common.utils;
 
-import com.foogui.foo.generator.domain.DataBase;
+import com.foogui.common.domain.DataBase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

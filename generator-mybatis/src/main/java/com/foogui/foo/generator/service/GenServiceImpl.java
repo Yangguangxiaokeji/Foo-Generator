@@ -1,11 +1,12 @@
 package com.foogui.foo.generator.service;
 
-import com.foogui.foo.generator.domain.Column;
-import com.foogui.foo.generator.domain.DataBase;
-import com.foogui.foo.generator.domain.GenDTO;
-import com.foogui.foo.generator.domain.Table;
-import com.foogui.foo.generator.enums.TypeEnum;
-import com.foogui.foo.generator.util.*;
+import com.foogui.common.constant.CommonConstant;
+import com.foogui.common.domain.Column;
+import com.foogui.common.domain.DataBase;
+import com.foogui.common.domain.GenDTO;
+import com.foogui.common.domain.Table;
+import com.foogui.common.utils.*;
+import com.foogui.common.enums.TypeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.velocity.Template;
@@ -49,7 +50,12 @@ public class GenServiceImpl implements GenService {
     }
 
 
-
+    /**
+     * 根据表的元数据准备Table
+     * @param tableName
+     * @param dto
+     * @return {@link Table}
+     */
     private Table prepareTableByMetaInfo(String tableName, GenDTO dto) {
         Table table = new Table();
         JDBCUtils.MetaTable metaTable = JDBCUtils.getMetaTable(tableName, dto.getDataBase());

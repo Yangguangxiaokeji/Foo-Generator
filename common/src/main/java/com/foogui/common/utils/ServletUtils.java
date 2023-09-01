@@ -1,14 +1,13 @@
 package com.foogui.common.utils;
 
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.servlet.http.HttpServletRequest;
-
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class ServletUtils {
-
-    public static HttpServletRequest getRequest() {
-        return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+    public static void setResponseToZip(HttpServletResponse response, byte[] data, String zipName) throws IOException {
+        response.reset();
+        response.setHeader("Content-Disposition", "attachment; filename=" + zipName + ".zip");
+        response.addHeader("Content-Length", "" + data.length);
+        response.setContentType("application/octet-stream; charset=UTF-8");
     }
 }

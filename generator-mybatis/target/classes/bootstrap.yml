@@ -1,6 +1,6 @@
 spring:
   application:
-    name: generator
+    name: generator-mybatis
 server:
   port: 8889
 

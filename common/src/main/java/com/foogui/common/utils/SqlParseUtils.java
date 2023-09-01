@@ -1,7 +1,7 @@
-package com.foogui.foo.generator.util;
+package com.foogui.common.utils;
 
-import com.foogui.foo.generator.domain.Column;
-import com.foogui.foo.generator.enums.TypeEnum;
+import com.foogui.common.domain.Column;
+import com.foogui.common.enums.TypeEnum;
 import lombok.SneakyThrows;
 import net.sf.jsqlparser.expression.Alias;
 import net.sf.jsqlparser.expression.Expression;

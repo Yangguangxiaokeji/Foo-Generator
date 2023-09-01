@@ -1,10 +1,10 @@
 package com.foogui.foo.generator.controller;
 
-import com.foogui.foo.generator.domain.GenDTO;
+import com.foogui.common.utils.FileUtils;
+import com.foogui.common.domain.GenDTO;
 import com.foogui.foo.generator.service.GenService;
-import com.foogui.foo.generator.util.ValidGroup;
+import com.foogui.common.validation.ValidGroup;
 import net.sf.jsqlparser.JSQLParserException;
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +34,7 @@ public class GenController {
         String ddl = new String(file.getBytes(), StandardCharsets.UTF_8);
         dto.setDdl(ddl);
         byte[] data = genGenService.doCreateCodeByDDL(dto);
-        doCreateZip(response, data, dto.getProjectName());
+        FileUtils.doCreateZip(response, data,dto.getProjectName());
     }
 
 
@@ -44,19 +44,10 @@ public class GenController {
      * @param response 响应
      * @param dto      dto
      * @throws IOException         ioexception
-     * @throws JSQLParserException jsqlparser异常
      */
     @PostMapping("/batch")
     public void genCodeByTableNames(HttpServletResponse response,@Validated(ValidGroup.Database.class) @RequestBody GenDTO dto) throws IOException {
         byte[] data = genGenService.doCreateCodeBatch(dto);
-        doCreateZip(response, data, dto.getProjectName());
-    }
-
-    private void doCreateZip(HttpServletResponse response, byte[] data, String zipName) throws IOException {
-        response.reset();
-        response.setHeader("Content-Disposition", "attachment; filename=" + zipName + ".zip");
-        response.addHeader("Content-Length", "" + data.length);
-        response.setContentType("application/octet-stream; charset=UTF-8");
-        IOUtils.write(data, response.getOutputStream());
+        FileUtils.doCreateZip(response, data,dto.getProjectName());
     }
 }
