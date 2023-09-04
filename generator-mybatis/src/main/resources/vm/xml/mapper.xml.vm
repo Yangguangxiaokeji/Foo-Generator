@@ -34,7 +34,7 @@
         #foreach($column in $columns)
             <if test="${column.javaField} != null #if($column.javaType ==
                 'String' ) and $column.javaField.trim() != ''#end">
-                and ${column.columnName} = #{${column.javaField}}
+                and ${column.columnName} = #{${column.javaField},jdbcType=${column.jdbcType}}
             </if>
         #end
         </where>
@@ -103,7 +103,7 @@
         <foreach item="item" index="index" collection="${className}POList" separator=",">
             (
         #foreach($column in $columns)
-            #{item.$column.javaField}#if($foreach.count != $columns.size()),#end
+            #{item.$column.javaField,jdbcType=$column.jdbcType}#if($foreach.count != $columns.size()),#end
         #end
             )
         </foreach>
