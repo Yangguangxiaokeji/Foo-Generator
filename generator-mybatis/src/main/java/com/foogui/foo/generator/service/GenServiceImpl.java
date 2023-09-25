@@ -3,7 +3,7 @@ package com.foogui.foo.generator.service;
 import com.foogui.common.constant.CommonConstant;
 import com.foogui.common.domain.Column;
 import com.foogui.common.domain.DataBase;
-import com.foogui.common.domain.GenDTO;
+import com.foogui.common.model.request.GenRequest;
 import com.foogui.common.domain.Table;
 import com.foogui.common.utils.*;
 import com.foogui.common.enums.TypeEnum;
@@ -30,7 +30,7 @@ import java.util.zip.ZipOutputStream;
 public class GenServiceImpl implements GenService {
 
     @Override
-    public byte[] doCreateCodeByDDL(GenDTO dto) {
+    public byte[] doCreateCodeByDDL(GenRequest dto) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ZipOutputStream zip = new ZipOutputStream(outputStream);
         doGeneratorCode(prepareTableByDDL(dto),zip);
@@ -39,7 +39,7 @@ public class GenServiceImpl implements GenService {
     }
 
     @Override
-    public byte[] doCreateCodeBatch(GenDTO dto) {
+    public byte[] doCreateCodeBatch(GenRequest dto) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ZipOutputStream zip = new ZipOutputStream(outputStream);
         for (String tableName : dto.getTableNames()) {
@@ -56,7 +56,7 @@ public class GenServiceImpl implements GenService {
      * @param dto
      * @return {@link Table}
      */
-    private Table prepareTableByMetaInfo(String tableName, GenDTO dto) {
+    private Table prepareTableByMetaInfo(String tableName, GenRequest dto) {
         Table table = new Table();
         JDBCUtils.MetaTable metaTable = JDBCUtils.getMetaTable(tableName, dto.getDataBase());
 
@@ -124,7 +124,7 @@ public class GenServiceImpl implements GenService {
      *
      * @param dto
      */
-    private Table prepareTableByDDL(GenDTO dto) {
+    private Table prepareTableByDDL(GenRequest dto) {
         String ddl=dto.getDdl();
 
         Table table = new Table();

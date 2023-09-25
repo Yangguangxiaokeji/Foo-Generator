@@ -1,4 +1,4 @@
-package com.foogui.common.domain;
+package com.foogui.common.model.response;
 
 import com.foogui.common.enums.ErrorCode;
 import lombok.Getter;

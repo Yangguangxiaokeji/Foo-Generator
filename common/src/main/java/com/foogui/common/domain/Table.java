@@ -1,23 +1,18 @@
 package com.foogui.common.domain;
 
-import com.foogui.common.domain.Column;
-import com.foogui.common.domain.DataBase;
 import lombok.Data;
 
 import java.util.List;
 
 
 /**
- * 表
+ * 表模型
  *
  * @author Foogui
  * @date 2023/05/11
  */
 @Data
 public class Table {
-
-    private static final long serialVersionUID = 1623794836078801057L;
-
 
     /**
      * 表名称
@@ -29,31 +24,29 @@ public class Table {
      */
     private String className;
 
-
     /**
-     * 生成模块名
+     * 生成的模块名
      */
     private String moduleName;
 
     /**
-     * 生成作者
+     * 作者名
      */
     private String author;
 
-
     /**
-     * 主键信息
-     */
-    private Column pk;
-
-    /**
-     * 方法功能说明
+     * 业务功能
      */
     private String functionName;
 
+    /**
+     * 主键列字段
+     */
+    private Column pk;
+
 
     /**
-     * 表列信息
+     * 其他列字段
      */
     private List<Column> columns;
 

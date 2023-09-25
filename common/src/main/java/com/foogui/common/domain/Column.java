@@ -2,48 +2,44 @@ package com.foogui.common.domain;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
 
 /**
- * 代码生成业务字段表
+ * 列字段模型
  *
- * @author ruoyi
+ * @author wangxin
+ * @date 2023/09/25
  */
 @Data
 public class Column {
 
-    private static final long serialVersionUID = 898085250093922131L;
-
     /**
-     * 列名称
+     * 字段名称（db）
      */
     private String columnName;
 
     /**
-     * 列描述
+     * 字段描述（db）
      */
     private String columnComment;
 
     /**
-     * 列类型
+     * 字段类型（db）
      */
     private String columnType;
 
     /**
-     * JAVA类型
+     * java类型
      */
     private String javaType;
 
     /**
-     * JAVA字段名
+     * java字段
      */
-    @NotBlank(message = "Java属性不能为空")
     private String javaField;
 
     /**
-     * 数据库字段类型
+     * jdbc类型
      */
     private String jdbcType;
-
 
 }

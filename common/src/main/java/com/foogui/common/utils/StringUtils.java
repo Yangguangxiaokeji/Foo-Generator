@@ -1,7 +1,5 @@
 package com.foogui.common.utils;
 
-import java.util.UUID;
-
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 驼峰形式转下划线
@@ -95,14 +93,4 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         return input.replaceAll("`", "");
     }
 
-
-
-    /**
-     * 获得去掉 "-" 的uuid
-     *
-     * @return {@link String}
-     */
-    public static String getSimpleUUID() {
-        return UUID.randomUUID().toString().replaceAll("-", "");
-    }
 }

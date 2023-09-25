@@ -1,15 +1,7 @@
 package com.foogui.common.validation;
 
 public interface ValidGroup {
-    interface Json {
 
-    }
+    interface Database { }
 
-    interface DDL {
-
-    }
-
-    interface Database {
-
-    }
 }

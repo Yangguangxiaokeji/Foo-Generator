@@ -1,7 +1,7 @@
 package com.foogui.foo.generator.controller;
 
 import com.foogui.common.utils.FileUtils;
-import com.foogui.common.domain.GenDTO;
+import com.foogui.common.model.request.GenRequest;
 import com.foogui.foo.generator.service.GenService;
 import com.foogui.common.validation.ValidGroup;
 import net.sf.jsqlparser.JSQLParserException;
@@ -30,11 +30,11 @@ public class GenController {
      * @throws JSQLParserException sql解析异常
      */
     @PostMapping("/ddl")
-    public void genCodeThroughDDLFile(HttpServletResponse response, @RequestParam("file") MultipartFile file, GenDTO dto) throws IOException {
+    public void genCodeThroughDDLFile(HttpServletResponse response, @RequestParam("file") MultipartFile file, GenRequest dto) throws IOException {
         String ddl = new String(file.getBytes(), StandardCharsets.UTF_8);
         dto.setDdl(ddl);
         byte[] data = genGenService.doCreateCodeByDDL(dto);
-        FileUtils.doCreateZip(response, data,dto.getProjectName());
+        FileUtils.doCreateZip(response, data, dto.getProjectName());
     }
 
 
@@ -43,11 +43,11 @@ public class GenController {
      *
      * @param response 响应
      * @param dto      dto
-     * @throws IOException         ioexception
+     * @throws IOException ioexception
      */
     @PostMapping("/batch")
-    public void genCodeByTableNames(HttpServletResponse response,@Validated(ValidGroup.Database.class) @RequestBody GenDTO dto) throws IOException {
+    public void genCodeByTableNames(HttpServletResponse response, @Validated(ValidGroup.Database.class) @RequestBody GenRequest dto) throws IOException {
         byte[] data = genGenService.doCreateCodeBatch(dto);
-        FileUtils.doCreateZip(response, data,dto.getProjectName());
+        FileUtils.doCreateZip(response, data, dto.getProjectName());
     }
 }
