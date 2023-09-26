@@ -10,9 +10,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>generator-mybatisplus</module>
         <module>generator-mybatis</module>
-        <module>common</module>
+        <module>generator-common</module>
     </modules>
 
     <name>Foo-Generator</name>

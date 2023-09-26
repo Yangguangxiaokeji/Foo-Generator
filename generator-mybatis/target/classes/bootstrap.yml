@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: generator-mybatis
-server:
-  port: 8889
-

@@ -51,7 +51,7 @@ public class ${ClassName}Controller {
      * @param ${pkColumn.javaField} 主键
      * @return 单条数据
      */
-    @PostMapping("/query/{id}")
+    @GetMapping("/query/{id}")
     public BaseResult<${ClassName}VO> queryById(@PathVariable("id") ${pkColumn.javaType} ${pkColumn.javaField}) {
         return BaseResult.success(${className}Service.queryById(id).convert2VO());
     }
@@ -63,9 +63,9 @@ public class ${ClassName}Controller {
      * @return 新增结果
      */
     @PostMapping("/insert")
-    public BaseResult<String> insert(@RequestBody ${ClassName}DTO ${className}DTO) {
+    public BaseResult<?> insert(@RequestBody ${ClassName}DTO ${className}DTO) {
         ${className}Service.insert(${className}DTO.convert2PO());
-        return BaseResult.success("insert successfully");
+        return BaseResult.success();
     }
 
     /**
@@ -75,9 +75,9 @@ public class ${ClassName}Controller {
      * @return 更新结果
      */
     @PostMapping("/update")
-    public BaseResult<String> modifyById(@RequestBody ${ClassName}DTO ${className}DTO) {
+    public BaseResult<?> modifyById(@RequestBody ${ClassName}DTO ${className}DTO) {
         ${className}Service.modifyById(${className}DTO.convert2PO());
-        return BaseResult.success("update successfully");
+        return BaseResult.success();
     }
 
     /**
@@ -87,9 +87,9 @@ public class ${ClassName}Controller {
      * @return 删除是否成功
      */
     @PostMapping("/delete/{id}")
-    public BaseResult<String> deleteById(@PathVariable("id") $pkColumn.javaType id) {
+    public BaseResult<?> deleteById(@PathVariable("id") $pkColumn.javaType id) {
         ${className}Service.deleteById(id);
-        return BaseResult.success("delete successfully");
+        return BaseResult.success();
     }
 
     /**
@@ -99,12 +99,12 @@ public class ${ClassName}Controller {
      * @return 删除是否成功
      */
     @PostMapping("/deleteBatch")
-    public BaseResult<String> deleteBatch(@RequestBody ${ClassName}DTO ${className}DTO) {
+    public BaseResult<?> deleteBatch(@RequestBody ${ClassName}DTO ${className}DTO) {
         List<$pkColumn.javaType> ids = ${className}DTO.getIds();
         if (CollectionUtils.isEmpty(ids)) {
             return BaseResult.failed("must choose one least data");
         }
         ${className}Service.deleteBatchByIds(ids);
-        return BaseResult.success("delete batch successfully");
+        return BaseResult.success();
     }
 }

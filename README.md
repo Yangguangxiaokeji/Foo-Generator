@@ -2,7 +2,6 @@
 
 ​		本项目是基于Mybatis和MybatisPlus的代码生成器，可以自动快速生成单表，多表的controller，service，mapper，po，dto，vo等文件。
 
-​		根据需求，自行启动generator-mybatis或generator-mybatisplus即可
 
 ## 第一章 使用方法
 
@@ -18,7 +17,7 @@
 
   2、pachageName传你的项目包名即可
 
-### 1.2 通过连接数据库生成多表
+### 1.2 通过连接数据库生成多表(推荐)
 
 - 请求示例
 
@@ -37,10 +36,12 @@
       "dbname": "otd",
       "username": "root",
       "password": "root",
-      "tableNames":["t_purchase_relation","t_risk_info"]
+      "tableNames":["t_purchase_relation","t_risk_info"],
+      "frameType": "Mybatis"
   }
   ```
 
   需要说明：
 
   1、以上参数除了author和projectName，其他**必须传递**
+  2、frameType只可以传递Mybatis或者MybatisPlus

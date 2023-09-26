@@ -1,6 +1,6 @@
 package com.foogui.foo.generator.service;
 
-import com.foogui.common.model.request.GenRequest;
+import com.foogui.generator.common.model.request.GenRequest;
 
 public interface GenService {
 
@@ -20,6 +20,6 @@ public interface GenService {
      * @param dto dto
      * @return {@link byte[]}
      */
-    public byte[] doCreateCodeBatch(GenRequest dto);
+    byte[] doCreateCodeBatch(GenRequest dto);
 
 }

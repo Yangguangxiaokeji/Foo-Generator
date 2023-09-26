@@ -1,10 +1,9 @@
 package com.foogui.foo.generator.controller;
 
-import com.foogui.common.utils.FileUtils;
-import com.foogui.common.model.request.GenRequest;
 import com.foogui.foo.generator.service.GenService;
-import com.foogui.common.validation.ValidGroup;
-import net.sf.jsqlparser.JSQLParserException;
+import com.foogui.generator.common.model.request.GenRequest;
+import com.foogui.generator.common.utils.FileUtils;
+import com.foogui.generator.common.validation.ValidGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +26,6 @@ public class GenController {
      * @param response 响应
      * @param file     文件
      * @throws IOException         ioexception
-     * @throws JSQLParserException sql解析异常
      */
     @PostMapping("/ddl")
     public void genCodeThroughDDLFile(HttpServletResponse response, @RequestParam("file") MultipartFile file, GenRequest dto) throws IOException {
