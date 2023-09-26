@@ -27,17 +27,17 @@
 
   ```json
   {
-      "packageName":"com.foogui.gen.code",
+      "functionName": "客户订单交期",
+      "packageName":"com.faw.supplychain.balance",
       "prefix":"t_",
-      "projectName":"gen-code-vq",
-      "author":"Foogui",
-      "host": "localhost",
-      "port": "3308",
-      "dbname": "otd",
-      "username": "root",
-      "password": "root",
-      "tableNames":["t_purchase_relation","t_risk_info"],
-      "frameType": "Mybatis"
+      "projectName":"gen-order",
+      "host": "10.112.72.62",
+      "port": "3306",
+      "dbname": "otd-sim",
+      "username": "hqccgl",
+      "password": "MysqlHqccgl2022!",
+      "tableNames":["t_order_delivery_cycle_detail","t_order_delivery_cycle_info","t_order_delivery_occupancy"],
+      "frameType":"MybatisPlus"
   }
   ```
 
